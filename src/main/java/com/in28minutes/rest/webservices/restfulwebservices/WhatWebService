@@ -1,0 +1,44 @@
+Let's consider a simple definition of a web service. A service which is delivered over the web. Is that a complete definition?
+So if I deliver a service over the Internet over HTTP, does it really become of service?
+
+You might be using a lot of web applications. Right? Facebook, Twitter, your shopping applications, a wide variety of applications. Are all of them Web services?
+Let's consider todo application that I have build. This application helps you to log in log out and try and manage your Todos.
+You can add new Todos delete existing ones and also updated the Todo information. It's a simple web application which is built using Java and Spring MVC frameworks.
+Is this a Web service? Suppose, a friend of mine, he's building a social application. Let's call it something like Facebook. Right?
+
+So he wants to add the features to manage Todos into his application. He wants to use some of the functionality from our Todo application which we have built.
+Will he be able to use the application as it is? The current application as we have built it, delivers HTML output. HTML format which is designed for rendering data
+on the screen on the Browser. HTML supports like I want my menu here or I want this data, I would want this button to on my screen. I can use HTML to design that kind of stuff.
+HTML is not really a format which is designed for application to application interaction.
+
+The output that you're delivering in, it's not consumable by my application. So what are the other options that are present?
+He tells me, “Hey! Haven't you really designed your application very well?” Your application is really having well-defined layers.
+You have web layer, you have a business layer and a data layer. Can I reuse this stuff from your business layer?
+
+The output from your web layer is HTML. I cannot use it. But can I use your business logic? He says, “OK! Can I create a jar with your business logic and reuse that stuff?”
+That's a good option, Right? He wants to create a jar out of the business logic. Can he use it as it is? What does the data layer need?
+The data layer really needs a database. Right? So it needs a database to talk to. So what my friend needs to do now is to install a database and also there would be
+other dependencies. So he would need to make sure that all other dependencies are satisfied.
+
+Think about when there's a change in the business logic. So let's say I am upgrading my Todo application to have some new business logic. Will he automatically get it? Nope!
+
+I wanted to actually create a jar and provide him a new version of the jar. So that he can get the new version of the business logic.
+We cannot consume the output from the web layer which is HTML and there are a lot of problems associated with creating a jar and trying to reuse it that way.
+
+If the Todo application is able to provide output in a format that other applications are able to understand then will it solve the problem? That's where the concept of
+a web service comes into picture. W3C definition of a web service says it's a software system designed to support interoperable machine to machine interaction over a network.
+
+The three keywords are - interoperable, machine to machine interaction, over a network. The first thing is, web services are designed for application to application interaction.
+My Todo application is not a web service because it's not designed for application to application interaction. Right now it's only designed for a human interaction.
+If another application wants to talk to it, the Todo application is not ready yet. Should be interoperable means any other kind of application should be able to talk to my application.
+It can be application A which is installed on .Net. Application B which is installed on Java and application C may have been built using PHP. Irrespective of their technologies
+they should be able to talk to my Todo service. That's when my Todo application will become of web service and the last one is it should allow communication over a network.
+
+We were talking about this jar option. Right? So when I create a jar and give it to my friend then the jar is installed locally. Communication would happen within the boundaries of this system.
+The communication will not happen over the network. In that scenario, this not really a web service. For an application to be of web service, it should allow a
+communication over a network. Other application should be able to talk to it. The applications could have been deployed anywhere. They might have been deployed on the
+same system, on a different system or somewhere on the Internet. They should be allowed to talk to my application only then my application will be a web service.
+
+We tried to understand the most important things that our web service should support. We learned that a web service should support application to application interaction.
+It should be interoperable, and it should allow communication over the network. We looked at the fact that the three keys to a web service are - it needs to support an
+application to application interaction. It should be platform independent, and it should allow communication over a network.

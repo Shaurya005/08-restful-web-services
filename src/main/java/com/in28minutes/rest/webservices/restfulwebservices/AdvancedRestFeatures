@@ -1,0 +1,62 @@
+In the last few steps we focused on the fundamentals of Rest API and how do you create resources.
+How do you how can you perform actions on resources and how can you do validation for your rest API?
+
+Starting this step, let's focus on a few advanced rest API features. How do you generate documentation for your rest API?
+We'll be talking about open API and swagger. We'll also talk about content negotiation. Until now, we have played with JSON format.
+For example, if your consumers expect an XML response back, how do you do that? We'll be talking about internationalization, also called i18n,
+and you might be having users around the world. How do you customize your API responses based on the language of your users?
+
+We'll also be looking at how you can create multiple versions of your rest API and a number of other advanced features we'll be looking at. HATEOAS.
+We'll be looking at two types of filtering - static and dynamic. We'll also be looking at how you can monitor your rest API.
+
+
+
+Starting this up. Let's focus on the documentation of your rest API. Your rest API consumers need to understand your rest API.
+They need to know what are the different resources that are being exposed? What are the different actions that can be performed?
+And they would also need to understand the request and response structure. They need to understand what is the format of your request?
+
+What is the kind of response they can expect back? And do you have any constraints or validations?
+
+So your API consumers need to have a really good understanding of your rest API so that they can play with it.
+When we talk about REST api documentation, there are a number of challenges. How can you ensure that your documentation is up to date and correct?
+Accuracy is always a big challenge. Your documentation might get out of sync from that off code.
+Another important thing is consistency of your documentation. You might have hundreds of rest API in an enterprise.
+
+How do you ensure that the documentation for all these API is in a consistent format? When we talk about API documentation, we have two options.
+One is manually maintain documentation. Basically, you can have a document or a HTML file where you maintain documentation related to your rest API.
+
+If you're manually maintaining the documentation, then you would need to always put in the effort to make sure that it is in sync with the code.
+The alternative is to generate the documentation from code. Earlier we wrote the code for our user resource.
+Can we use this code to generate documentation for the user resource so that option to generating documentation based on your code?
+
+In this step, let's explore option two - generating documentation for your rest API from code. There are two very important terms that you need to understand
+whenever we talk about rest API documentation. This is irrespective of the language you're making use of to develop your rest API, whether you're building your
+API using Java, Python, Node.js or any of the languages. These two terminology are pretty common - one is swagger and 2 is open API.
+
+Let's take a quick peek into history to understand swagger and Open API. In 2011 was when swagger specification and swagger tools were introduced.
+Around this timeframe we started to build a lot of rest API and we needed a format in which we can document our rest API. That way, Swagger came in and
+it provided a specification called Swagger Specification. And Swagger also provided a number of tools to visualize this specification, to make use of this specification.
+
+Swagger became really, really popular. It almost became the de facto standard for documenting your rest API. And in 2016, open API specification was created based
+on this swagger specification. A no of large enterprises came in and there was an open standard called Open API specification, which was created as a standard for documenting your rest API.
+
+This was based on the Swagger specification. However, a very, very important thing to remember is that these swagger tools continue to exist.
+So the swagger specification became open API specification. However, swagger tools, those are basically the tools to visualize and consume your rest API.
+They continue to exist, for example, swagger UI. So open API specification earlier this was called swagger specification.
+
+There is nothing but a standard language-agnostic interface to define your rest API. You can see an example of the open API specification in the left hand side image.
+This specific example is using open API 3.0.1 version. As part of your open API specification, you can define where your specific API is exposed.
+
+What are the different resources that are being exposed? What are the actions that you can perform on your on your rest API?
+
+So your open API specification helps you to discover and understand API. This was earlier called Swagger Specification.
+And Swagger helps you to visualize and interact with your rest API. Having this documentation is good.
+
+However, you would want to have a tool which will enable you to interact with the rest API, look at it in a more visually pleasing way.
+That's what Swagger UI provides you with. It provides a great UI around the open API specification and it also enables you to easily play with your rest API.
+
+In this step, we got a quick introduction to some of the important things that you need to know about rest documentation. We talked about open API and
+we also talked about swagger UI. And next step, let's generate documentation for our API.
+springdoc-openapi java library present in org.springdoc groupId helps to automate the generation of API documentation for spring boot projects.
+
+localhost:8080/swagger-ui.html

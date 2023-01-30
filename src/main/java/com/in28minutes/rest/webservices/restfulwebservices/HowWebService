@@ -1,0 +1,71 @@
+We will look into some of the important ‘How’ questions related to web services. The first one - How does data exchange between applications take place?
+I have an application which is consuming a web service. How does the data exchange take place? We have an application A which is consuming a web service.
+Let’s say the web service is related to a Todo application and it offers a list of Todos back. The application A needs to send some input to the web service.
+It needs to say I want Todos related to Ranga. So it needs to send an input called Ranga to the web service and the web service needs to send an output back.
+Ranga has this list of Todos. He wants to create a course on this Topic. He wants to learn this topic more. Those list of Todos have to be sent back to
+application A by the web service. So there is an input and there is an output.
+
+The input to a web service is called a Request and the output from a web service is called a Response. So if application A needs some data from the web service
+or needs to perform some action on the web service, It creates a request. Application A will create a request saying, “OK! I want details of Todos of Ranga.”
+Web service would look at the request, process it and it would create a response with the list of Todos that Ranga has and it returns them back to application A.
+Request and response are the basic concepts behind web services. The important thing is the web services should be platform independent.
+
+We should be able to call our web service from a java application or .net application and a PHP application as well. How do we achieve that?
+If the request format, lets say its a java specific format or a .net specific format, will other applications in other platforms be able to send the request in the format?
+Nope! The important thing for the web service to be platform independent is that the request and the response also should be platform independent.
+They should be in formats which are supported by all different kinds of platforms. There are two popular formats for request and response.
+The first one is XML. XML stands for Extensible Markup Language. You can generate XML from a Java platform or a .Net platform or any other platform of your choice.
+
+You have node, a closing node, another node, another closing node which is specifying the detail of the code that we would want.
+I would want to get the details of course one. I'm creating an XML request. So XML is one of the popular format for request and response in Web services.
+
+The other data exchange format is JSON. JSON stands for Javascript Object Notation. It's the language javascript, which is used typically on the front end.
+Now, we are also using javascript in the backend like Node JS and things like that. But javascript for a long while was a language of the front end.
+And JSON is how javascript represent its objects. The great thing is JSON is supported by a wide variety of platforms. Not just front end systems but also backend
+systems - Java, .net and all other platforms. So to make the web service platform independent what we do is make the request and the response platform independent.
+
+The next question is how does the application A know the format of request and response. Application A needs to send a request to the web service and once it gets the
+response it needs to be able to process it and do whatever it wants to do with it. How does it know what request to send, where to send it, and what's the format of response?
+
+The solution to that is service definition. Every web service offers a service definition. The service definition would specify -
+
+A) Request/Response format - OK! what is the format which is used for request and response? Is it JSON or XML or any other format? That's specified by service definition.
+B) Request Structure - It specifies the structure of the request. How can a consumer create a request? What is the format of the request.
+C) Response Structure - It also defines the response structure. What is this structure of the response which is returned by the service.
+D) Endpoint - The last thing which is part of service definition is how to call the service. What is the end point? Where is this service available?
+              So the application A wants to make use of the web service.
+
+In this video, we looked at the important ‘HOWs’ related to web service. How does data exchange take place through request and response.
+How do we make web services platform independent by creating platform independent requests and responses by using data exchange format like XML and JSON.
+How does an application know the format of a request and response? We do that by providing something called a service definition.
+
+
+Key terminologies related to web services:-
+
+Request and Response
+Message Exchange Format (XML and JSON)
+Service provider (Server)
+Service consumer (Client)
+Service Definition
+Transport
+
+Request - Input of our service and Response - output from a web service. Message exchange format is the format of the request and the response i.e. XML, JSON or any other.
+          What is the format of the request and response. That’s basically the message exchange format.
+
+Service provider and Service consumer - Application A wants to consume a service from the web service which is present in here.
+The web service here is called a service provider. Service provider is the one which hosts the web service. The service consumer is the one which is consuming the web service.
+Application A in this example is a consumer of the web service whereas the java application, the .net application and the PHP application are the consumers of the web Service.
+
+Service Definition - The service definition is the contract between the service provider and the service consumers. The service definition defines what is the format of the
+request and response - XML or JSON? What is the structure of the request. What is the structure of the response and where is this service available. That’s the end point.
+Endpoint defines what URL is the service is exposed at. How can these service consumer call this service which is exposed by the service provider.
+
+Transport - It defines how a service is called. Is the service exposed over Internet i.e. I'll be given a URL and I'll call it or is the service exposed over a Queue.
+Two popular formats are HTTP and MQ. HTTP is basically over the web. Just like you type a URL in the browser, in a similar way application A would call the web service.
+
+The other format is MQ, is to use communication over a queue. The service requester would place a message in the queue. The service provider would be listening on the queue.
+And as soon as there's a request on the queue it would take the request, do the processing of it, create the response and put it back in the queue and the service
+requester would get the response from the queue. The transport which is used is MQ. It does not necessarily be Websphere MQ, it can be any other MQs as well.
+
+But the fact is, the communication happens over queue. This is called a web service which is exposed over the transport MQ.
+Transport indicates whether the service is exposed over a queue or whether its exposed over the web i.e. internet.

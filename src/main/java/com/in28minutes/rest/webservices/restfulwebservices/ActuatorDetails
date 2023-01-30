@@ -1,0 +1,65 @@
+Spring Boot Actuator provides spring boots production ready features. It helps you to monitor and manage your application in production.
+And if you want to make use of spring boot actuator in your spring boot projects, there is a very easy #way. All that you need to do is to add in spring boot starter actuator.
+This is a starter project to add spring boot actuator to your application and this would provide you with a number of endpoints.
+There's an endpoint called Beans, which provides you with a complete list of spring beans. In your application, you have application health information exposed from the health end point.
+You can look at the metrics related to the application from the Matrix End Point, and you can also look at the details around request mappings using the mappings endpoint.
+
+In addition, there are a number of other endpoints which are exposed by spring boot actuator. But by default, the only thing which actuator exposes is the health of the application.
+
+If you want to expose more information as part of actuator then go to application.properties, and configure this - management.endpoints.web.exposure.include=*. This would expose all the APIs.
+And now you'd see a lot of URLs there like beans, caches, health, info, conditions, configprops, environment, information related to loggers, heapdump, threaddump, matrix and a lot of other things.
+
+Let's quickly explore a couple of these. Let's open up localhost:8080/actuator/beans. This would provide information about all the spring beans which are loaded into our application context.
+
+For example, let's pick up our controllers. So if I search for controller in here. You can see HelloWorldController.
+
+This is one of the beans which is created. You can see the scope of it is singleton. You can see the type for it, the entire package name, class name.
+
+You can see this specific resource. Where is this specific resource present?
+
+And you can also see the dependencies for it. You can see that this is dependent on messageSource.
+
+So you can see if I go over to Hello World Controller, you can see that message source is a dependency for it.
+
+Let's now search for user resource. So user resource is also present.
+
+In here, We have a singleton bean which is created for the user resource and you can see that user service is a dependency of it.
+
+And if you search for userDaoService, you'll also be able to see the details for it in here.
+
+So you can see that userDaoService is also a singleton and it does not have any dependencies in here.
+
+So if you want to look at the details of all the beans which are loaded into your spring context, that's where you can make use of the actuator/beans endpoint.
+
+The next thing we'll be looking at is envy localhost:8080/actuator/env if you open it up. You'd see details about the environment in which our application is running.
+
+We are making use of Port:8080. We are making use of Java version 17. You can look at the class path in here and you can see a lot of other details in here.
+
+So if you want to get details about the environment in which your application is running, you can go for actuator/env endpoint.
+
+In addition, you have endpoints where you can check out the loggers, you can get heap dump, thread dump, and you can also look at metrics. So let's go to actuator/metrics.
+
+You can see that there are a number of metrics which are being tracked by actuator. If you want to look at the details for one of these metrics.
+
+Let's look at the details for one of these metrics. So I'll look at HTTP server requests. If I copy this out HTTP server requests and append it at the end of metrics.
+
+So metrics/http.server.requests. Now you can see the details of how many HTTP requests were sent to this specific application.
+
+You can see that 16 requests have been sent. Total execution time was 0.27 seconds and the maximum time a request took was 0.020 seconds.
+
+You can also see the different URIs which are being hit and you can also see the response statuses at the bottom.
+
+So matrix endpoint helps you to track metrics around your application as well as the environment in which your application is running in.
+
+You can look at details related to thread pools, connection pools.
+
+You can look at metrics related to JVM and also the Tomcat server where your application is running in.
+
+And the last thing we look at is mappings, actuator/mappings. Earlier, we have defined a number of controllers. You would see that all these are present in mappings.
+
+For example, if I take Hello world controller. If I search for Hello World Controller. The first method I'm looking at is HelloWorld.
+
+This is map to get. So this is map to a request method get and this is the URI. And you can see details about it in here.
+
+Similar to that, you'll be able to see the details about all the request methods in here.
+So Actuator provides you with a number of production ready features, which helps you to monitor and manage your application in production.

@@ -1,0 +1,23 @@
+In this course, we take a deep dive into the world of RESTful Web Services & Microservice. Crux of the course are the sections on RESTful web services & Micro Services with Spring Cloud
+
+We would start with the basics of RESTful Web Services - HTTP Request Methods, How do you do exception handling, validation and HATEOAS
+before moving into the advanced concepts related to REST.
+
+How do you document RESTful Web services?
+How do you version them?
+How do you implement filtering?
+How do you monitor your RESTful Web services?
+And we will also talk about content negotiation and internationalization.
+
+The framework we will be using in this part of the course are Spring, Spring Boot, Maven and IDE Eclipse
+
+After that we will move into the world of microservices with Spring Cloud.
+We will understand the challenges in building micro services and we would look at the various solutions which are provided by spring cloud.
+
+We would start with building a limits service and using it to talk to Spring cloud config server. We would implement load balancing with ribbon and Feign and
+we would also implement a Eureka naming server. One of the main challenges with micro services is visibility into what's happening with the microservices.
+
+What's happening in the background? We would implement an API gateway with Zuul and also distributed tracing with Zipkin to get more visibility into the Microservices.
+We would make our micro services fault tolerant using Hysterix. All the details of the course including this step by step details are on a Github repository.
+This course is centered around two key sections. RESTful Services with Spring Boot and Microservices with Spring Cloud. After learning to build rest web services and
+microservices with spring boot and Spring Cloud, you will also learn to containerised them using Docker and orchestrate them with Kubernetes in this course.

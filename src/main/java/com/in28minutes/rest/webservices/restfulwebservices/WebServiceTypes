@@ -1,0 +1,92 @@
+Different types of web services or groups of web services - SOAP and REST.
+One thing to remember is the fact that SOAP and REST are not really comparable. REST defines an architectural approach.
+Whereas SOAP poses restrictions on the format of XML which is exchanged between your service provider and the service consumer.
+
+SOAP stands for Simple Object Access Protocol. Actually it no longer stands for Simple Object Access Protocol.
+
+It's no longer an abbreviation anymore. SOAP is just like a request response. Any of those terms. SOAP defines a specific way of building web services.
+In SOAP we use XML as the request exchange format. So I have a Facebook application which is talking to TODO application. Facebook is sending a XML request
+and TODO application is sending back an XML response. Is this SOAP? Are Facebook & TODO applications communicating using SOAP. Nope. It's 'not sufficient to be SOAP.
+
+Important thing is SOAP defines a specific XML request and response structure. If you're using SOAP then you have to use this structure.
+So you have to create a SOAP Envelope which contains a SOAP header and a SOAP body. The header contains meta information like authentication, authorization,
+signatures and things like that. Body is where you really put the real content of your request or your response. So if you're actually saying you are creating a SOAP
+web service then you have to adhere to this request and response format. You should use a SOAP envelope with a header and a body in the request and the response.
+
+So if you're using soap web services then Facebook and TODO application have to communicate using a SOAP XML requests and a SOAP XML response. And example response
+is shown in here. So you have a SOAP envelope. You have a header. Here the header is empty. You have a body with the content of the response.
+When we look at the big picture SOAP defines a format for your request and the response. SOAP does not pose any restrictions on your transport.
+You can either use HTTP or MQ. So you can communicate over the web, over the Internet or you can use queues to communicate as well.
+
+And in SOAP, the service definition is typically done using something called Web Service Definition Language i.e. WSDL. A WSDL defines the endpoint.
+Basically where your service is exposed at. It defines all the operations that are exposed like get all course details, add a new course, delete course.
+So what are all the operations that are allowed. And also it specifies the request and response structure. If I want to get all the details of a course,
+how do I send the request. If I want to delete a course, How do I send a request? And what kind of response can I expect? WSDL is the service definition for SOAP services.
+
+In summary, SOAP is all about adhering to the services XML structure. Adhering to the envelop, header and the body.
+Once you have your request and response in that structure then you can say you are developing SOAP Web Services.
+
+
+
+REST stands for representational state transfer. It’s a term which is Coined by Roy Fielding. He is the guy who also developed HTTP protocol.
+The key thing about REST services is the fact that they would want to make best use of his HTTP. What happens is when I enter a URL in the browser,
+a request is being sent to the website server. And the website server responds back with a response.
+
+The important thing that we would need to talk about is what's the format of this request and response.
+These requests and response are in a format which is defined by HTTP, Hypertext Transfer Protocol. When I type in a URL in the browser.
+
+It sends a GET request to that server. Server responds back with a HTTP response containing the HTML. So I'm sending a GET request and the server is sending back
+a HTTP response containing the HTML. The browser looks at that response, takes the HTML and displays it on the screen.
+
+Let's say there's a form I'm filling up with a list of details and I click the submit button. In those kind of scenarios, typically, we are creating a post request.
+HTTP defines the headers which are present in the request and the body of the request. Also, along with the response there are headers and also the body.
+
+In addition to the request header and the request body HTTP also defines something called request methods. You can indicate what action you are doing by using
+the HTTP request methods. Get - I'm trying to get the details of something. Post - I'm trying to create something. Put - I am trying to update something.
+A HTTP response on the other hand will also include a HTTP response status code. Was it successful? Page not found? 404 and things like that.
+
+Roy Fielding said, “Why do we need to reinvent the wheel?” Why don't we make use of HTTP to develop our web services as well.
+And that's where the concept of RESTful web services comes in. RESTful web services try to define services using the different concepts that are already present in HTTP.
+The most important abstraction in the REST is something called a resource. A resource is anything that you'd want to expose to the outside world through your application.
+
+For example, when I talk about the TODO management application the users are a resource who is using it. Ranga is a resource. What are the TODOs also can be a resource.
+A specific TODO is a resource. A list of TODOs is also a resource. When we are talking about talking about RESTful services, we are always thinking about resources.
+
+What are the resources in my application - A TODO, a user or A list of TODOs? What we do is we would assign a URI to the resource. For example, the URI to the
+resource Ranga is /user/Ranga. URL to all the TODOs that Ranga has, /user/Ranga/todos. The URI to first Resource that Ranga has is /user/Ranga/todos/1.
+So what we do is we assign a URI to each resource. REST does not worry about how you are representing your resource. Is it XML? Is it HTML? Is it JSON? That's not really matter.
+
+The most important thing is the fact that you define your resource and perform the actions on the resource using whatever facilities that are provided by HTTP.
+As we discussed, if I wanted to create a resource I would do a post to /users. If I want to delete something, do a delete to /users/1, similarly get - /users, get/users/1.
+
+The important thing about REST is the fact that you have to think in terms of the resources.
+What are the different resources that are present in your application that you would want to expose to other applications. And the second thing is make use of the HTTP.
+
+If you want to do any operations on the resource you have to use the verbs which are already specified by HTTP. Get, Put, POST, FETCH and things like that.
+In rest, we don't really have any restriction on the data exchange format. While JSON is very popular, REST doesn't worry whether you are using JSON, XML or whatever format.
+
+Important thing is transport is always HTTP. REST is completely built on top of HTTP. There is no standard service definition which is attached with REST.
+That can be a drawback in some scenarios because when a client wants to consume a service it needs to understand the request format and response format too.
+
+But the service definition will be really useful. WADL - Web Application Definition Language, it's one of the formats in which you can specify your RESTful Web services.
+It has not become very popular. Another option is Swagger. Swagger is gaining a lot of popularity and we would use swagger in this course for defining our RESTful services.
+REST focuses on your resources and how do you perform actions on them making best use of HTTP.
+
+
+
+The differences between REST and SOAP -
+
+Actually It's not apple to apple comparison because SOAP is an format of XML whereas REST is actually an architectural style.
+
+Let's talk about the data exchange format. In SOAP the data exchange format is always XML that too specifically the SOAP XML with SOAP envelope header and body.
+Both your request and response should adhere to the SOAP Structure. In REST there is no strict date exchange format. You can exchange a XML, a JSON or any
+other format you would want use. However, JSON is the most popular data exchange format in REST. As far as the service definitions are concerned SOAP uses WSDL. Web service definition language.
+
+REST does not have a standard definition language. While WADL is one of the standards. Web Application Definition Language. However, its not really popularly Used.
+In this course, we are going to use one of the popular definitions for RESTful web services - Swagger.
+
+As far as the transport protocol is concerned SOAP does not pose any restrictions at all. You can use web that is HTTP or you can use MQ.
+REST is very specific about making the best use of HTTP protocol. RESTful services are typically more easier to implement than SOAP.
+
+RESTful services are typically based on JSON which is an easy format to pass and do things with it and also with RESTful services, we don't really need to
+mandatorily define a service definition. But with SOAP you have to define WSDL and there are a lot of complexities associated with parsing your XMLs as well.

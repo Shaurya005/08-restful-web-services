@@ -1,0 +1,14 @@
+Let's look at how you can explore your rest API using Hal Explorer, we already looked at Hal. Hal stands for JSON Hypertext Application Language.
+
+It's a simple format that gives a consistent and easy way to hyperlink between resources in our API.
+Earlier we enhanced our get a specific user API to return a link to all users.
+
+The format which we are making use of in here is HAL format. So we have _links inside which all our links are defined.
+And Hal Exploder is an API exploder for restful hyper media APIs which are using Hal. If our apps are using Hal, then we can use Hal Explorer to explore our APIs.
+
+The biggest advantage of using Hal Explorer is that it enables your non-technical teams also to play with your APIs.
+Springboot Hal Explorer Auto Configures HAL Explorer for Springboard Projects.
+
+So if you want to use HAL Explorer in your spring boot projects, the easiest way to do that is by using Spring Boot HAL explorer. We have to just simply add
+dependency for it in pom.xml. Hat Explorer is in the org.springframework.data Group ID and Artifact ID is spring-data-rest-hal-explorer.
+You can just type localhost:8080 to explore HAL explorer.
